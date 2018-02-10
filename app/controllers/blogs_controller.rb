@@ -1,10 +1,10 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_blog, only: [:show, :edit, :update, :toggel_status, :destroy]
 
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs = Blog.order(:title)
   end
 
   # GET /blogs/1
@@ -22,7 +22,6 @@ class BlogsController < ApplicationController
   end
 
   # POST /blogs
-  # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
 
@@ -45,10 +44,16 @@ class BlogsController < ApplicationController
     end
   end
 
-
+  def toggel_status
+    if @blog.draft?
+      @blog.published!
+    elsif @blog.published?
+      @blog.draft!
+    end
+    redirect_to blogs_url, notice: 'Blog status updated.'
+  end
 
   # DELETE /blogs/1
-  # DELETE /blogs/1.json
   def destroy
     @blog.destroy
     respond_to do |format|
