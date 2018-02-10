@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   resources :blogs
   resources :portfolio_items
 
-  get 'pages/home'
-  get 'pages/about'
-  get 'pages/contact'
+  get 'about' => 'pages#about'
+  get 'contact' => 'pages#contact'
 
+  root to: 'pages#home'
 end
 
 # To search routes for a certain word
