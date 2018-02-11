@@ -3,7 +3,6 @@ Rails.application.routes.draw do
     sign_in: 'login',
     sign_out: 'logout',
     sign_up: 'register',
-
   }
   resources :blogs do
     member do
