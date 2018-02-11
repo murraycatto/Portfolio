@@ -1,14 +1,15 @@
 class PortfolioItem < ApplicationRecord
   include Placeholder
-  validates_presence_of :title, :body, :main_image, :thumb_image
 
+  has_many :technologies
+  validates_presence_of :title, :body, :main_image, :thumb_image
+  after_initialize :set_defaults
+
+
+  scope :ruby_on_rails, -> { where(subtitle:"Ruby on Rails")}
   def self.angular
     where(subtitle:"Angular")
   end
-
-  scope :ruby_on_rails, -> { where(subtitle:"Ruby on Rails")}
-
-  after_initialize :set_defaults
 
   def set_defaults
 

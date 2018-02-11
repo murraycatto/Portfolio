@@ -23,26 +23,29 @@ puts "10 Blog posts created!"
  )
 end
 
-puts "5 Skills created"
+puts "5 Skills created!"
 
 8.times do |i|
-  PortfolioItem.create!(
+  portfolio_item = PortfolioItem.create!(
     title: "Portfolio Title #{i}",
     subtitle: "Ruby on Rails",
     body: "Fingerstache blog bushwick mlkshk, stumptown crucifix gentrify tumblr quinoa schlitz kitsch disrupt celiac. Meditation slow-carb migas, ennui af polaroid brooklyn actually paleo hoodie fixie health goth neutra post-ironic. Letterpress ugh helvetica hell of farm-to-table truffaut, kickstarter man bun unicorn knausgaard art party YOLO four loko. Small batch bushwick lumbersexual selfies. Bespoke next level franzen succulents.",
     main_image: "http://via.placeholder.com/600x400",
     thumb_image: "http://via.placeholder.com/350x200"
   )
+  portfolio_item.technologies.create!(name:"Ruby")
+
 end
 
 2.times do |i|
-  PortfolioItem.create!(
+  portfolio_item = PortfolioItem.create!(
     title: "Portfolio Title #{i}",
     subtitle: "Angular",
     body: "Fingerstache blog bushwick mlkshk, stumptown crucifix gentrify tumblr quinoa schlitz kitsch disrupt celiac. Meditation slow-carb migas, ennui af polaroid brooklyn actually paleo hoodie fixie health goth neutra post-ironic. Letterpress ugh helvetica hell of farm-to-table truffaut, kickstarter man bun unicorn knausgaard art party YOLO four loko. Small batch bushwick lumbersexual selfies. Bespoke next level franzen succulents.",
     main_image: "http://via.placeholder.com/600x400",
     thumb_image: "http://via.placeholder.com/350x200"
   )
+  portfolio_item.technologies.create!(name:"Angular")
 end
 
-puts "10 PortfolioItems created"
+puts "10 PortfolioItems created!"
