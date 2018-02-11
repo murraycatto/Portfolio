@@ -41,16 +41,16 @@ end
 ## Has Many Through
 #### With the through: attr we can do the following
 ```ruby
-  author = Author.first.genres
+  Author.first.genres
 ```
 #### OR
 ```ruby
-  gener = Genre.first.authors
+  Genre.first.authors
 ```
 
 ## Pluck
 ```ruby
-  gener = Genre.pluck(:name)
+  Genre.pluck(:name)
 ```
 This will return an array for the Genre names
 
@@ -58,6 +58,13 @@ This will return an array for the Genre names
   Auther.first.books.pluck(:title)
 ```
 This will return an array of the Book titles that belong to the first author
+
+#### Similar to pluck
+```ruby
+  Genre.ids
+```
+This will return an array for the Genre ids
+
 
 ## Useful tools
 
