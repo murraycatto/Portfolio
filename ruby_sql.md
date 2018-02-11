@@ -38,16 +38,21 @@ class Genre < ApplicationRecord
 end
 ```
 
+## Has Many Through
 #### With the through: attr we can do the following
 ```ruby
-  auther = Author.first.genres
+  author = Author.first.genres
 ```
 #### OR
 ```ruby
   gener = Genre.first.authors
 ```
 
-
+## Pluck
+```ruby
+  gener = Genre.pluck(:name)
+```
+This will return an array for the Genre names
 
 
 #### Gets Sum of All book sales
