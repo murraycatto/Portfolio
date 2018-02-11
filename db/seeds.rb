@@ -32,6 +32,9 @@ puts "5 Skills created!"
     body: "Fingerstache blog bushwick mlkshk, stumptown crucifix gentrify tumblr quinoa schlitz kitsch disrupt celiac. Meditation slow-carb migas, ennui af polaroid brooklyn actually paleo hoodie fixie health goth neutra post-ironic. Letterpress ugh helvetica hell of farm-to-table truffaut, kickstarter man bun unicorn knausgaard art party YOLO four loko. Small batch bushwick lumbersexual selfies. Bespoke next level franzen succulents.",
     main_image: "http://via.placeholder.com/600x400",
     thumb_image: "http://via.placeholder.com/350x200"
+    technologies_attributes:[
+      {name:"Rails"},{name:"CoffeeScript"}
+    ]
   )
   portfolio_item.technologies.create!(name:"Ruby")
 
