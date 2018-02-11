@@ -37,6 +37,14 @@ class Genre < ApplicationRecord
   has_many :authors, through: :books
 end
 ```
+## Includes
+```ruby
+ def index
+  @books = Book.includes(:author,:genre)
+end
+```
+This is much better than calling .all and then calling @books.author for large scale applications as it does it in one query instead of lots of little ones
+
 
 ## Has Many Through
 #### With the through: attr we can do the following
