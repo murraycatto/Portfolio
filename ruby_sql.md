@@ -16,6 +16,40 @@ Book.create!(title: "Only One Direction", genre_id: biographies.id, author_id: v
 Book.create!(title: "DIY Deathstar", genre_id: non_fiction.id, author_id: vader.id, sales: 1200)
 ``` 
 
+## Models
+```ruby 
+class Author < ApplicationRecord
+  has_many :books
+  has_many :genres, through: :books
+end
+```
+
+```ruby
+class Book < ApplicationRecord
+  belongs_to :author
+  belongs_to :genre
+end
+```
+
+```ruby
+class Genre < ApplicationRecord
+  has_many :books
+  has_many :authors, through: :books
+end
+```
+
+#### With the through: attr we can do the following
+```ruby
+  auther = Author.first.genres
+```
+#### OR
+```ruby
+  gener = Genre.first.authors
+```
+
+
+
+
 #### Gets Sum of All book sales
 ```ruby 
 Book.sum(:sales) 
