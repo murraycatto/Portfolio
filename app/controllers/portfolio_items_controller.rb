@@ -6,15 +6,19 @@ class PortfolioItemsController < ApplicationController
     @portfolio_items = PortfolioItem.all
   end
 
+  def angular
+    @portfolio_items = PortfolioItem.angular
+    render 'index'
+  end
+
   def new
     @portfolio_item = PortfolioItem.new
   end
 
   def create
-    @portfolio_item = PortfolioItem.new()
-
+    @portfolio_item = PortfolioItem.new(portfolio_item_params)
     respond_to do |format|
-      if @portfolio_item.save(portfolio_item_params)
+      if @portfolio_item.save
         format.html {redirect_to portfolio_items_path ,notice: "Your portfolio item has been created"}
       else
         format.html { render :new}
@@ -53,6 +57,6 @@ class PortfolioItemsController < ApplicationController
     end
 
     def portfolio_item_params
-      params.require(:portfolio_item).permit(:title,:subtitle,:body)
+      params.require(:portfolio_item).permit(:title,:subtitle,:body, technologies_attributes:[:name])
     end
 end
