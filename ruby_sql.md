@@ -54,6 +54,12 @@ end
 ```
 This will return an array for the Genre names
 
+```ruby
+  Auther.first.books.pluck(:title)
+```
+This will return an array of the Book titles that belong to the first author
+
+## Useful tools
 
 #### Gets Sum of All book sales
 ```ruby 
