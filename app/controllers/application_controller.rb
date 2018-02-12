@@ -3,5 +3,5 @@ class ApplicationController < ActionController::Base
   include DeviseWhitelist
   include SourceManager
   include GuestUser
-  include DefaultPageContent 
+  include DefaultPageContent
 end
