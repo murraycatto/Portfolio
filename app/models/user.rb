@@ -14,4 +14,16 @@ class User < ApplicationRecord
     self.name.split.last
   end
 
+  # Error Handling
+  # def get_facebook_messages
+  #   begin
+  #     api = new API
+  #     @messages = api.facebook_messages
+  #   rescue => e
+  #     flash[:error] = "Error occured: #{e}"
+  #   end
+  # end
+  # You can specifiy the type of error  rescue IOError => e
+  # https://ruby-doc.org/core-2.2.0/Exception.html
+  # Error Handling
 end

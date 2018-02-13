@@ -39,9 +39,14 @@ gem 'friendly_id', '~> 5.1.0'
 # for Authentication
 gem 'devise'
 
+gem 'bootstrap', '~> 4.0.0.alpha6'
+
+# gem 'devcamp_view_tool', :git => 'https://github.com/murraycatto/devcamp_view_tool.git'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry'
 end
 
 group :development do
