@@ -134,10 +134,10 @@ body {
 
 @media (min-width: 40em) {
   /* Pull out the header and footer */
-  .masthead {
-    position: fixed;
-    top: 0;
-  }
+  // .masthead {
+  //   position: fixed;
+  //   top: 0;
+  // }
   .mastfoot {
     position: fixed;
     bottom: 0;
@@ -183,4 +183,8 @@ body {
   width: 22rem;
   margin: 0 auto;
   float: none;
+}
+.nav-masthead span{
+  margin-right: 10px;
+  margin-left: 10px;
 }
