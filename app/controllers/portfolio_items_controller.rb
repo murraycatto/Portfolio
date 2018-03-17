@@ -2,9 +2,9 @@ class PortfolioItemsController < ApplicationController
   before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
   layout "portfolio_items"
   access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
-  
+
   def index
-    @portfolio_items = PortfolioItem.all
+    @portfolio_items = PortfolioItem.order("position ASC")
   end
 
   def angular
