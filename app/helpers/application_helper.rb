@@ -16,26 +16,37 @@ module ApplicationHelper
      end
    end
 
-   
+   def nav_items
+     [
+
+       {
+         url:root_path,
+         title: "Home"
+       },
+       {
+         url:about_path,
+         title: "About"
+       },
+       {
+         url:contact_path,
+         title: "Contact"
+       },
+       {
+         url:blogs_path,
+         title: "Blog"
+       },
+       {
+         url:portfolio_items_path,
+         title: "Portfolio"
+       }
+     ]
+   end
 
    def nav_helper style, tag_type
-     nav_links = <<~NAV
-      <#{tag_type}>
-        <a href="#{root_path}" class="#{style} #{active? root_path}">Home</a>
-      </#{tag_type}>
-      <#{tag_type}>
-        <a href="#{about_path}" class="#{style} #{active? about_path}">About</a>
-      </#{tag_type}>
-      <#{tag_type}>
-        <a href="#{contact_path}" class="#{style} #{active? contact_path}">Contact</a>
-      </#{tag_type}>
-      <#{tag_type}>
-        <a href="#{blogs_path}" class="#{style} #{active? blogs_path}">Blog</a>
-      </#{tag_type}>
-      <#{tag_type}>
-        <a href="#{portfolio_items_path}" class="#{style} #{active? portfolio_items_path}">Portfolio</a>
-      </#{tag_type}>
-     NAV
+     nav_links = ''
+     nav_items.each do |nav_item|
+       nav_links << "<#{tag_type}><a href='#{nav_item[:url]}' class='#{style} #{active? nav_item[:url]}'>#{nav_item[:title]}</a></#{tag_type}>"
+     end
      # This is called a HEREDOC
      nav_links.html_safe
    end

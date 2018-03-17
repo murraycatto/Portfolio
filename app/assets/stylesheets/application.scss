@@ -134,10 +134,10 @@ body {
 
 @media (min-width: 40em) {
   /* Pull out the header and footer */
-  // .masthead {
-  //   position: fixed;
-  //   top: 0;
-  // }
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
   .mastfoot {
     position: fixed;
     bottom: 0;
