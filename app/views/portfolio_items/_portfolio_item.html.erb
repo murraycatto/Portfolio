@@ -1,8 +1,6 @@
-<%= link_to portfolio_item_show_path(portfolio_item) do %>
-  <h2><%= portfolio_item.title %></h2>
-<% end %>
-<p><%= portfolio_item.subtitle %></p>
-<p><%= portfolio_item.body %></p>
-<%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil?%>
-<%= link_to 'Edit Item', edit_portfolio_item_path(portfolio_item)%>
-<%= link_to 'Delete Item', portfolio_item_path(portfolio_item), method: :delete, data: {confirm: 'Are you sure?'}%>
+<div class="card">
+  <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
+  <p class="card-text">
+    <span><%= link_to portfolio_item.title, portfolio_item_show_path(portfolio_item) %></span> <%= portfolio_item.subtitle %>
+  </p>
+</div>

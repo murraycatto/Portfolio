@@ -1,9 +1,10 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :toggel_status, :destroy]
   layout "blog"
-  
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+
   def index
-    @blogs = Blog.order(:title)
+    @blogs = Blog.page(params[:page]).per(5)
     @page_title = "My Portfolio Blog"
   end
 

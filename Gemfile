@@ -38,10 +38,21 @@ gem 'friendly_id', '~> 5.1.0'
 
 # for Authentication
 gem 'devise'
-
+# For style
 gem 'bootstrap', '~> 4.0.0.alpha6'
-
+# Our own gem
 gem 'devcamp_view_tool', :git => 'https://github.com/murraycatto/devcamp_view_tool.git'
+# For authorization ... not Authentication
+gem 'petergate', '~> 1.7'
+
+#Fort Awesome5
+gem "font-awesome5-rails"
+
+#jquery-rails
+gem "jquery-rails"
+
+#kaminari For pagination
+gem 'kaminari', '~> 1.0', '>= 1.0.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
